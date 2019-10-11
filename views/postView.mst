@@ -1,0 +1,19 @@
+{{> header}}
+
+      <h2 class="antenaNome">{{post.title}}</h2>
+        <hr />
+          <article>	
+            <p class="antenaDesc">Descrição: <br />{{post.body}}</p>
+
+            <hr />
+            <p class="tags">Tags: <br /><small>{{post.tags}}</small></p>
+            <hr />
+            <a href="/post/{{post.slug}}/edit">[ Editar ]</a>
+          </article>
+        </a>
+
+
+
+
+  </body>
+</html>

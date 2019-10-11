@@ -1,0 +1,27 @@
+{{> header}}
+
+<h2>Adicionar Antena</h2>
+
+<form method="POST" enctype="multipart/form-data">
+   <label>
+      Imagem:
+      <input type="file" name="photo" />
+   </label>
+   <br />
+   <label>
+      Titulo:
+      <input type="text" name="title" />
+   </label>
+   <br />
+   <label>
+      Descrição:
+      <textarea name="body"></textarea>
+   </label>
+   <br />
+   <label>
+      Tags <small>(separar tags por vírgula)</small>:
+      <input type="text" name="tags" />
+   </label>
+   <br />
+   <input type="submit" value="Enviar" />
+</form>

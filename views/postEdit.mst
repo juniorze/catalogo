@@ -1,0 +1,33 @@
+{{> header}}
+
+<h2>Editando Antena: {{post.title}}</h2>
+
+<form method="POST" enctype="multipart/form-data">
+   <label>
+      Imagem:<br />
+      {{#post.photo}}
+      <img src="/media/pq_{{post.photo}}" />
+      {{/post.photo}}
+      <input type="file" name="photo" />
+   </label>
+   <br />
+   <br />
+   <label>
+      Titulo:
+      <input type="text" name="title" value="{{post.title}}"/>
+   </label>
+   <br />
+   <br />
+   <label>
+      Descrição:
+      <textarea name="body">{{post.body}}</textarea>
+   </label>
+   <br />
+   <br />
+   <label>
+      <input type="text" name="tags" value="{{post.tags}}"/>
+   </label>
+   <br />
+   <br />
+   <input type="submit" value="Enviar" />
+</form>

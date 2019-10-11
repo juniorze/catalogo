@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
+    <!-- com zoom initial-scale=1 | Sem zoom user-scalable=no" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portal Abix - Ferramentas para Funcionarios" />
+    <meta name="keywords" content="abix,abix portal, portal abix" />
+    <meta name="copyright" content="© JuniorSilva 2019 | Abix Tecnologia" />
+    <meta name="author" content="JuniorZe" />
+    <script type="text/javascript"></script>
+
+    {{#pageTitle}}<title>{{pageTitle}}</title>{{/pageTitle}}
+    {{^pageTitle}}<title>{{h.defaultPageTitle}}</title>{{/pageTitle}}
+    
+  </head>
+  <body>
+    <header>
+        <a href="/"><img src="/images/logo_pq.png" alt="Abix logo"/></a>
+        <ul>
+          {{#h.menu}}
+            <li><a href="{{slug}}">{{name}}</a></li>
+          {{/h.menu}}
+        </ul>
+    </header>        
+
+      <div class="search">
+          <form action="/?t={{_id}}" method="get">
+              <input placeholder="Pesquisar" type="text" name="t" />
+          </form>
+      </div>
+
+        {{#flashes}}
+
+          {{#login}}
+            <div class="warning-success">{{.}}</div>
+          {{/login}}
+        
+          {{#success}}
+            <div class="warning-success">{{.}}</div>
+          {{/success}}
+
+          {{#error}}
+            <div class="warning-error">{{.}}</div>
+          {{/error}}
+
+          {{#info}}
+            <div class="warning-info">{{.}}</div>
+          {{/info}}
+
+        {{/flashes}}
+
+
