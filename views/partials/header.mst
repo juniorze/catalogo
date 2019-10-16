@@ -7,6 +7,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
     <!-- com zoom initial-scale=1 | Sem zoom user-scalable=no" -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +21,7 @@
     {{^pageTitle}}<title>{{h.defaultPageTitle}}</title>{{/pageTitle}}
     
   </head>
+
   <body>
     <header>
         <a href="/"><img src="/images/logo_pq.png" alt="Abix logo"/></a>
@@ -28,13 +30,17 @@
             <li><a href="{{slug}}">{{name}}</a></li>
           {{/h.menu}}
         </ul>
-    </header>        
+         <form action="/search" method="get">
+              <input placeholder="Pesquisar" type="search" name="S" />
+        </form>
+    </header>
 
-      <div class="search">
-          <form action="/?t={{_id}}" method="get">
-              <input placeholder="Pesquisar" type="text" name="t" />
-          </form>
-      </div>
+      <div class="tags">
+        {{#tags}}
+          <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
+        {{/tags}}
+      </div>    
+
 
         {{#flashes}}
 
@@ -55,5 +61,3 @@
           {{/info}}
 
         {{/flashes}}
-
-

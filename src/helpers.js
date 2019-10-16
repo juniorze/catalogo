@@ -1,4 +1,4 @@
-exports.defaultPageTitle = "Portal Abix";
+exports.defaultPageTitle = "Catálogo Abix";
 exports.defaultUserLogin = "Visitante";
 
 exports.menu = [

@@ -27,5 +27,7 @@ exports.index = async (req, res) => {
   pageInfos.tags = tags;
   pageInfos.posts = posts;
 
+  console.log(pageInfos);
+
   res.render("home", pageInfos);
 };

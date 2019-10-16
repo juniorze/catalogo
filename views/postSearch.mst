@@ -1,0 +1,18 @@
+{{> header}}
+
+      {{#post}}
+          <a href="/post/{{slug}}">
+            {{#photo}}
+            <figure>
+              <img src="/media/pq_{{photo}}" alt="{{title}}">
+            </figure>
+            {{/photo}}
+            <article>	
+              <h3 class="antenaNome">{{title}}</h3>
+              <p class="antenaDesc">{{body}}</p>
+            </article>
+          </a>
+      {{/post}}
+
+  </body>
+</html>

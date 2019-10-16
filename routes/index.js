@@ -10,6 +10,8 @@ router.get("/", homeController.index);
 router.get("/users/login", usersController.login);
 router.get("/users/register", usersController.register);
 
+router.get("/search", postController.search);
+
 router.get("/post/add", postController.add);
 router.post(
   "/post/add",

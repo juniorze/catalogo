@@ -17,7 +17,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-let publicPath = path.join(__dirname, "..", "public");
 app.use(express.static("public"));
 
 // Utilizando mensagens flash
