@@ -4,16 +4,18 @@ const slug = require("slug");
 
 exports.view = async (req, res) => {
   const post = await Post.findOne({ slug: req.params.slug });
-  console.log(post);
   res.render("postView", { post });
 };
 
 exports.search = async (req, res) => {
   let pesquisa = req.query.S;
   const post = await Post.find({
-    body: { $regex: new RegExp(pesquisa, "i") }
+    $or: [
+      { body: { $regex: new RegExp(pesquisa, "i") } },
+      { title: { $regex: new RegExp(pesquisa, "i") } }
+    ]
   });
-  console.log(post);
+
   res.render("postSearch", { post });
 };
 

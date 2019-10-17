@@ -2,6 +2,7 @@
 
       <h1>Catálogo de antenas</h1>
 
+      <div class="posts">
       {{#posts}}
         <div class="post">
           
@@ -12,8 +13,9 @@
               {{/photo}}
 
               <article>
-                <a href="/post/{{slug}}"><h3>{{title}}</h3></a>
-                <a href="/post/{{slug}}"><p>{{body}}</p></a>
+                <a href="/post/{{slug}}"><h3>{{title}}</h3></a><br />
+                <a href="/post/{{slug}}"><p>{{{body}}}</p></a>
+                <br /><br />
                 <a href="/post/{{slug}}/edit">[ Editar ]</a>
               </article>
           </a>
@@ -21,6 +23,7 @@
         </div>
         
       {{/posts}}
+      </div>
 
   </body>
 </html>

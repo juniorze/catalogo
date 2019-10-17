@@ -1,18 +1,27 @@
 {{> header}}
 
+      <div class="posts">
       {{#post}}
-          <a href="/post/{{slug}}">
-            {{#photo}}
-            <figure>
-              <img src="/media/pq_{{photo}}" alt="{{title}}">
-            </figure>
-            {{/photo}}
-            <article>	
-              <h3 class="antenaNome">{{title}}</h3>
-              <p class="antenaDesc">{{body}}</p>
-            </article>
+        <div class="post">
+          
+              {{#photo}}
+              <figure>
+                <a href="/post/{{slug}}"><img src="/media/pq_{{photo}}" alt="{{title}}"></a>
+              </figure>
+              {{/photo}}
+
+              <article>
+                <a href="/post/{{slug}}"><h3>{{title}}</h3></a><br />
+                <a href="/post/{{slug}}"><p>{{{body}}}</p></a>
+                <br /><br />
+                <a href="/post/{{slug}}/edit">[ Editar ]</a>
+              </article>
           </a>
+          
+        </div>
+        
       {{/post}}
+      </div>
 
   </body>
 </html>
