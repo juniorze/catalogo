@@ -9,13 +9,25 @@ exports.view = async (req, res) => {
 
 exports.search = async (req, res) => {
   let pesquisa = req.query.S;
-  const post = await Post.find({
-    $or: [
-      { body: { $regex: new RegExp(pesquisa, "i") } },
-      { title: { $regex: new RegExp(pesquisa, "i") } }
-    ]
-  });
-
+  const post = await Post.find(
+    {
+      $or: [
+        { body: { $regex: new RegExp(pesquisa, "i") } },
+        { tags: { $regex: new RegExp(pesquisa, "i") } },
+        { title: { $regex: new RegExp(pesquisa, "i") } }
+      ]
+    },
+    function(err, result) {
+      if (err) {
+        req.flash("error", "Erro: " + error.message);
+        return res.redirect("/");
+      }
+      if (result.length === 0) {
+        req.flash("info", "Desculpe! Não localizei nenhum item...");
+        res.redirect("/");
+      }
+    }
+  );
   res.render("postSearch", { post });
 };
 
