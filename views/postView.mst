@@ -3,16 +3,30 @@
         <div class="postV">
           <h2>{{post.title}}</h2><br />
             <hr />
-          <figure>
+          <figure class="imgPostV">
               <img src="/media/{{post.photo}}" alt="{{post.title}}">
           </figure>
           <article>
-            <p>{{{post.body}}}</p>
-              <hr />
-            <p class="tags">Tags: <br />{{post.tags}}</p>
+          {{! size thickness compatible frequency type }}
+            <p>
+                <strong>Comprimento:&ensp;</strong> {{post.size}}
+                <br />
+                <strong>Espessura:&ensp;</strong> {{post.thickness}}
+                <br />
+                <strong>Rádios Compatíveis:&ensp;</strong> {{post.compatible}}
+                <br />
+                <strong>Frequência:&ensp;</strong> {{post.frequency}}
+                <br />
+                <strong>Tipo:&ensp;</strong> {{post.type}}
+            </p>
+            <br /><hr />
+            <p class="tags">Tags:&ensp; {{post.tags}}</p>
             <br /><br />
-            <a href="/post/{{post.slug}}/edit">[ Editar ]</a>
           </article>
+          <ul>
+              <li><a href="/post/{{post.slug}}/edit">Editar</a></li>
+              <li><a href="/post/{{post.slug}}/delete">Deletar</a></li>
+          </ul>
         </div>  
 
   </body>

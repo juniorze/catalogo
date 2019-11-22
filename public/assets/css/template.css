@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   align-items: center;
-  color: #000;
 }
 body {
   display: flex;
@@ -48,6 +47,7 @@ header input:hover {
   background-color: #e6e6e6;
 }
 a {
+  color: #000;
   text-decoration: none;
 }
 a:hover {
@@ -112,6 +112,7 @@ h1 {
 .post article {
   display: flex;
   flex-direction: column;
+
   padding: 10px;
 }
 
@@ -171,4 +172,34 @@ input[type="submit"]:hover {
   cursor: pointer;
   background-color: #eeee;
   width: 434px;
+}
+
+.postV h2,
+.postV figure,
+.postV article {
+  padding-top: 20px;
+}
+
+.postV article {
+  color: #28262b;
+}
+
+.imgPostV {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  filter: drop-shadow(7px 7px 15px #000);
+  overflow: hidden;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.21, -0.67, 0.76, 1.63);
+}
+@keyframes shine {
+  100% {
+    transform: rotate(-30deg) translate(320%, 120%);
+  }
+}
+.imgPostV:hover:after {
+  position: relative;
+  height: 120%;
+  animation: shine 1s 0.2s ease-in-out forwards;
 }

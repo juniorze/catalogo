@@ -10,7 +10,23 @@ const postSchema = new mongoose.Schema({
     required: "Título é obrigatório"
   },
   slug: String,
-  body: {
+  size: {
+    type: String,
+    trim: true
+  },
+  thickness: {
+    type: String,
+    trim: true
+  },
+  compatible: {
+    type: String,
+    trim: true
+  },
+  frequency: {
+    type: String,
+    trim: true
+  },
+  type: {
     type: String,
     trim: true
   },
@@ -21,7 +37,7 @@ postSchema.pre("save", async function(next) {
   if (this.isModified("title")) {
     this.slug = slug(this.title, { lower: true });
 
-    const slugRegex = new RegExp(`^(${this.slug})((-[0-9]{1,}$)?)$`, "i");
+    const slugRegex = new RegExp(`^${this.slug}((-[0-9]{1,}$)?)$`, "i");
 
     const postWithSlug = await this.constructor.find({ slug: slugRegex });
 

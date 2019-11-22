@@ -12,9 +12,17 @@
 
               <article>
                 <a href="/post/{{slug}}"><h3>{{title}}</h3></a><br />
-                <a href="/post/{{slug}}"><p>{{{body}}}</p></a>
-                <br /><br />
-                <a href="/post/{{slug}}/edit">[ Editar ]</a>
+                <a href="/post/{{slug}}"><p>
+                <strong>Comprimento:  </strong>{{size}}
+                <br />
+                <strong>Espessura:  </strong>{{thickness}}
+                <br />
+                <strong>Rádios Compatíveis:  </strong>{{compatible}}
+                <br />
+                <strong>Frequência:  </strong>{{frequency}}
+                <br />
+                <strong>Tipo:  </strong>{{type}}
+                </p></a>
               </article>
           </a>
           

@@ -9,13 +9,33 @@
    </label>
    <br />
    <label>
-      Titulo:
+      Título:
       <input type="text" name="title" />
    </label>
    <br />
    <label>
-      Descrição:
-      <textarea name="body"></textarea>
+      Comprimento:     
+      <input type="text" name="size" />
+   </label>
+   <br />
+   <label>
+      Espessura:
+      <input type="text" name="thickness" />
+   </label>
+   <br />
+   <label>
+      Compatíveis:
+      <input type="text" name="compatible" />
+   </label>
+   <br />
+   <label>
+      Frequência:
+      <input type="text" name="frequency" />
+   </label>
+   <br />
+   <label>
+      Tipo:
+      <input type="text" name="type" />
    </label>
    <br />
    <label>

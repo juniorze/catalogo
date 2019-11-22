@@ -12,7 +12,11 @@ exports.search = async (req, res) => {
   const post = await Post.find(
     {
       $or: [
-        { body: { $regex: new RegExp(pesquisa, "i") } },
+        { size: { $regex: new RegExp(pesquisa, "i") } },
+        { thickness: { $regex: new RegExp(pesquisa, "i") } },
+        { compatible: { $regex: new RegExp(pesquisa, "i") } },
+        { frequency: { $regex: new RegExp(pesquisa, "i") } },
+        { type: { $regex: new RegExp(pesquisa, "i") } },
         { tags: { $regex: new RegExp(pesquisa, "i") } },
         { title: { $regex: new RegExp(pesquisa, "i") } }
       ]

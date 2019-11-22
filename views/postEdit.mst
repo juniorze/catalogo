@@ -11,18 +11,35 @@
       <input type="file" name="photo" />
    </label>
    <br />
-   <br />
    <label>
-      Titulo:
+      Título:
       <input type="text" name="title" value="{{post.title}}"/>
    </label>
    <br />
-   <br />
    <label>
-      Descrição:
-      <textarea name="body">{{post.body}}</textarea>
+      Comprimento:     
+      <input type="text" name="size" value="{{post.size}}"/>
    </label>
    <br />
+   <label>
+      Espessura:
+      <input type="text" name="thickness" value="{{post.thickness}}"/>
+   </label>
+   <br />
+   <label>
+      Compatíveis:
+      <input type="text" name="compatible" value="{{post.compatible}}"/>
+   </label>
+   <br />
+   <label>
+      Frequência:
+      <input type="text" name="frequency" value="{{post.frequency}}"/>
+   </label>
+   <br />
+   <label>
+      Tipo:
+      <input type="text" name="type" value="{{post.type}}"/>
+   </label>
    <br />
    <label>
       <input type="text" name="tags" value="{{post.tags}}"/>
