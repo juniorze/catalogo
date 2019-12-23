@@ -33,14 +33,20 @@
          <form action="/search" method="get">
               <input placeholder="Pesquisar" type="search" name="S" />
         </form>
+
+        {{#user}}
+            Olá,{{user.name}}
+        {{/user}}
+
     </header>
 
       <div class="tags">
         {{#tags}}
           <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
         {{/tags}}
-      </div>    
+      </div>  
 
+       
 
         {{#flashes}}
 

@@ -8,7 +8,10 @@ const router = express.Router();
 
 router.get("/", homeController.index);
 router.get("/users/login", usersController.login);
+router.post("/users/login", usersController.loginAction);
+
 router.get("/users/register", usersController.register);
+router.post("/users/register", usersController.registerAction);
 
 router.get("/search", postController.search);
 

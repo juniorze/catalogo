@@ -24,10 +24,10 @@ exports.index = async (req, res) => {
     }
   }
 
+  console.log(req.user);
+
   pageInfos.tags = tags;
   pageInfos.posts = posts;
-
-  console.log(pageInfos);
 
   res.render("home", pageInfos);
 };
