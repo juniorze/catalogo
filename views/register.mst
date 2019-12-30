@@ -1,24 +1,27 @@
 {{> header}}
-    <h2>Cadastro de Usuário:<h2>
-    <form method="POST">
-      <label> 
-          Nome:
-          <input required type="text" name="name" placeholder="Nome Sobrenome" />
-      </label>
-      <br />
+
+<div>
+   <h2>Cadastro de Usuário:<h2>
+   <form method="POST">
       <label>
-          E-mail:
-          <input required type="email" name="email" placeholder="E-mail" />
+         Nome:
+         <input required type="text" name="name" placeholder="Nome Sobrenome" />
       </label>
-      <br />
+         <br />
       <label>
-          Senha: 
-          <input required type="password" name="password" placeholder="Senha" />
+         E-mail:
+         <input required type="email" name="email" placeholder="E-mail" />
       </label>
-      <br /> <br />
+         <br />
       <label>
-          <input type="submit" value="Cadastrar" />
+         Senha:
+         <input required type="password" name="password" placeholder="Senha" />
       </label>
-    </form>
-  </body>
-</html>
+         <br /> <br />
+      <label>
+         <input type="submit" value="Cadastrar" />
+      </label>
+   </form>
+</div>
+
+{{> footer}}

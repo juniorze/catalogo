@@ -1,37 +1,41 @@
 {{> header}}
 
-      <h1>Catálogo de antenas</h1>
 
-      <div class="posts">
+<div>
+<h1>Catálogo de antenas</h1>
+
+   <div class="posts">
       {{#posts}}
-        <div class="post">
-          
-              {{#photo}}
-              <figure>
-                <a href="/post/{{slug}}"><img src="/media/pq_{{photo}}" alt="{{title}}"></a>
-              </figure>
-              {{/photo}}
+         <div class="post">
+            {{#photo}}
+               <figure>
+                  <a href="/post/{{slug}}"><img src="/media/pq_{{photo}}" alt="{{title}}"></a>
+               </figure>
+            {{/photo}}
 
-              <article>
-                <a href="/post/{{slug}}"><h3>{{title}}</h3></a><br />
-                <a href="/post/{{slug}}"><p>
-                <strong>Comprimento:  </strong>{{size}}
-                <br />
-                <strong>Espessura:  </strong>{{thickness}}
-                <br />
-                <strong>Rádios Compatíveis:  </strong>{{compatible}}
-                <br />
-                <strong>Frequência:  </strong>{{frequency}}
-                <br />
-                <strong>Tipo:  </strong>{{type}}
-                </p></a>
-              </article>
-          </a>
-          
-        </div>
-        
+            <article>
+               <a href="/post/{{slug}}"><h3>{{title}}</h3></a>
+                  <br />
+               <a href="/post/{{slug}}">
+                  <p>
+                     <strong>Comprimento:  </strong>{{size}}
+                        <br />
+                     <strong>Espessura:  </strong>{{thickness}}
+                        <br />
+                     <strong>Rádios Compatíveis:  </strong>{{compatible}}
+                        <br />
+                     <strong>Frequência:  </strong>{{frequency}}
+                        <br />
+                     <strong>Tipo:  </strong>{{type}}
+                  </p>
+                  <br>
+                  <small>Autor: {{author.name}}</small>
+
+               </a>
+            </article>
+         </div>
       {{/posts}}
-      </div>
+   </div>
+</div>
 
-  </body>
-</html>
+{{> footer}}

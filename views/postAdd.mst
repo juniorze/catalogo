@@ -1,47 +1,50 @@
 {{> header}}
 
-<h2>Adicionar Antena</h2>
+<div>
+   <h2>Adicionar Antena</h2>
 
-<form method="POST" enctype="multipart/form-data">
-   <label>
-      Imagem:
-      <input type="file" name="photo" />
-   </label>
-   <br />
-   <label>
-      Título:
-      <input type="text" name="title" />
-   </label>
-   <br />
-   <label>
-      Comprimento:     
-      <input type="text" name="size" />
-   </label>
-   <br />
-   <label>
-      Espessura:
-      <input type="text" name="thickness" />
-   </label>
-   <br />
-   <label>
-      Compatíveis:
-      <input type="text" name="compatible" />
-   </label>
-   <br />
-   <label>
-      Frequência:
-      <input type="text" name="frequency" />
-   </label>
-   <br />
-   <label>
-      Tipo:
-      <input type="text" name="type" />
-   </label>
-   <br />
-   <label>
-      Tags <small>(separar tags por vírgula)</small>:
-      <input type="text" name="tags" />
-   </label>
-   <br />
-   <input type="submit" value="Enviar" />
-</form>
+   <form method="POST" enctype="multipart/form-data">
+      <label>
+         Imagem:
+         <input type="file" name="photo" />
+      </label>
+         <br />
+      <label>
+         Título:
+         <input type="text" name="title" />
+      </label>
+         <br />
+      <label>
+         Comprimento:
+         <input type="text" name="size" />
+      </label>
+         <br />
+      <label>
+         Espessura:
+         <input type="text" name="thickness" />
+      </label>
+         <br />
+      <label>
+         Compatíveis:
+         <input type="text" name="compatible" />
+      </label>
+         <br />
+      <label>
+         Frequência:
+         <input type="text" name="frequency" />
+      </label>
+         <br />
+      <label>
+         Tipo:
+         <input type="text" name="type" />
+      </label>
+         <br />
+      <label>
+         Tags <small>(separar tags por vírgula)</small>:
+         <input type="text" name="tags" />
+      </label>
+         <br />
+      <input type="submit" value="Enviar" />
+   </form>
+</div>
+{{> footer}}

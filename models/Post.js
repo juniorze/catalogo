@@ -1,59 +1,70 @@
-const mongoose = require("mongoose");
-const slug = require("slug");
+const mongoose = require('mongoose');
+const slug = require('slug');
+
 mongoose.Promise = global.Promise;
 
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
 const postSchema = new mongoose.Schema({
-  photo: String,
-  title: {
-    type: String,
-    trim: true,
-    required: "Título é obrigatório"
-  },
-  slug: String,
-  size: {
-    type: String,
-    trim: true
-  },
-  thickness: {
-    type: String,
-    trim: true
-  },
-  compatible: {
-    type: String,
-    trim: true
-  },
-  frequency: {
-    type: String,
-    trim: true
-  },
-  type: {
-    type: String,
-    trim: true
-  },
-  tags: [String]
+   photo: String,
+   title: {
+      type: String,
+      trim: true,
+      required: 'Título é obrigatório',
+   },
+   slug: String,
+   size: {
+      type: String,
+      trim: true,
+   },
+   thickness: {
+      type: String,
+      trim: true,
+   },
+   compatible: {
+      type: String,
+      trim: true,
+   },
+   frequency: {
+      type: String,
+      trim: true,
+   },
+   type: {
+      type: String,
+      trim: true,
+   },
+   tags: [String],
+   author: {
+      type: ObjectId,
+      ref: 'User',
+   },
 });
 
-postSchema.pre("save", async function(next) {
-  if (this.isModified("title")) {
-    this.slug = slug(this.title, { lower: true });
+postSchema.pre('save', async function(next) {
+   if (this.isModified('title')) {
+      this.slug = slug(this.title, { lower: true });
 
-    const slugRegex = new RegExp(`^${this.slug}((-[0-9]{1,}$)?)$`, "i");
+      const slugRegex = new RegExp(`^${this.slug}((-[0-9]{1,}$)?)$`, 'i');
 
-    const postWithSlug = await this.constructor.find({ slug: slugRegex });
+      const postWithSlug = await this.constructor.find({ slug: slugRegex });
 
-    if (postWithSlug.length > 0) {
-      this.slug = `${this.slug}-${postWithSlug.length + 1}`;
-    }
-  }
-  next();
+      if (postWithSlug.length > 0) {
+         this.slug = `${this.slug}-${postWithSlug.length + 1}`;
+      }
+   }
+   next();
 });
 
 postSchema.statics.getTagsList = function() {
-  return this.aggregate([
-    { $unwind: "$tags" },
-    { $group: { _id: "$tags", count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-  ]);
+   return this.aggregate([
+      { $unwind: '$tags' },
+      { $group: { _id: '$tags', count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+   ]);
 };
 
-module.exports = mongoose.model("Post", postSchema);
+/* postSchema.statics.findPosts = function(filters = {}) {
+   return this.find(filters).populate('author');
+}; */
+
+module.exports = mongoose.model('Post', postSchema);

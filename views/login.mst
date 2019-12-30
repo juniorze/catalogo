@@ -1,19 +1,25 @@
 {{> header}}
-    <h2>Login:<h2>
-    <form method="POST">
+
+<div>
+   <form method="POST">
       <label>
-          E-mail:
-          <input required type="email" name="email" placeholder="E-mail" />
+         E-mail:
+         <input required type="email" name="email" placeholder="E-mail" />
       </label>
+         <br />
+      <label>
+         Senha:
+         <input required type="password" name="password" placeholder="Senha" />
+      </label>
+         <br />
+         <br />
+      <label>
+         <input type="submit" value="Logar" />
+      </label>
+   </form>
       <br />
-      <label>
-          Senha: 
-          <input required type="password" name="password" placeholder="Senha" />
-      </label>
-      <br /> <br />
-      <label>
-          <input type="submit" value="Logar" />
-      </label>
-    </form>
-  </body>
-</html>
+      <br />
+   <small><a href="/users/forget">Esqueci minha senha</a></small>
+</div>
+
+{{> footer}}

@@ -1,33 +1,45 @@
 {{> header}}
 
-        <div class="postV">
-          <h2>{{post.title}}</h2><br />
-            <hr />
-          <figure class="imgPostV">
-              <img src="/media/{{post.photo}}" alt="{{post.title}}">
-          </figure>
-          <article>
-          {{! size thickness compatible frequency type }}
-            <p>
-                <strong>Comprimento:&ensp;</strong> {{post.size}}
-                <br />
-                <strong>Espessura:&ensp;</strong> {{post.thickness}}
-                <br />
-                <strong>Rádios Compatíveis:&ensp;</strong> {{post.compatible}}
-                <br />
-                <strong>Frequência:&ensp;</strong> {{post.frequency}}
-                <br />
-                <strong>Tipo:&ensp;</strong> {{post.type}}
-            </p>
-            <br /><hr />
-            <p class="tags">Tags:&ensp; {{post.tags}}</p>
-            <br /><br />
-          </article>
-          <ul>
-              <li><a href="/post/{{post.slug}}/edit">Editar</a></li>
-              <li><a href="/post/{{post.slug}}/delete">Deletar</a></li>
-          </ul>
-        </div>  
+<div class="postV">
 
-  </body>
-</html>
+   <h2>{{post.title}}</h2>
+
+      <br />
+      <hr />
+
+   <figure class="imgPostV">
+      <img src="/media/{{post.photo}}" alt="{{post.title}}">
+   </figure>
+
+   <article>
+      {{! size thickness compatible frequency type }}
+      <p>
+         <strong>Comprimento:&ensp;</strong> {{post.size}}
+            <br />
+         <strong>Espessura:&ensp;</strong> {{post.thickness}}
+            <br />
+         <strong>Rádios Compatíveis:&ensp;</strong> {{post.compatible}}
+            <br />
+         <strong>Frequência:&ensp;</strong> {{post.frequency}}
+            <br />
+         <strong>Tipo:&ensp;</strong> {{post.type}}
+      </p>
+         <br />
+         <hr />
+      <p class="tags">Tags:&ensp; {{post.tags}}</p>
+         <br />
+         <br />
+
+      <small>Autor: {{author.name}}</small>
+   </article>
+
+   {{#user}}
+      <ul>
+         <li><a href="/post/{{post.slug}}/edit">Editar</a></li>
+         <li><a href="/post/{{post.slug}}/delete">Deletar</a></li>
+      </ul>
+   {{/user}}
+
+</div>
+
+{{> footer}}

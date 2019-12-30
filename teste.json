@@ -1,0 +1,43 @@
+db.ConnectionEntity.aggregate(
+    // Pipeline
+    [
+        // Stage 1
+        {
+            $match: {
+                "Id":"9c06cb0c-966a-4f6b-b087-816587629079"
+            }
+        },
+
+        // Stage 2
+        {
+            $lookup: // Equality Match
+            {
+                from: "Enterprise",
+                localField: "EnterpriseId",
+                foreignField: "_id",
+                as: "joined"
+            }
+        },
+
+        // Stage 3
+        {
+            $addFields: {                 
+                "Enterprise": {"$arrayElemAt": ["$joined.Profile", 0]}
+            }
+        },
+
+        // Stage 4
+        {
+            $addFields: {
+                "Enterprise.Id": {"$arrayElemAt": ["$joined._id", 0]}
+            }
+        },
+
+        //get rid of joined if it's no longer useful
+        {
+           $project: {
+               joined: 0
+           }
+        }
+    ]
+);

@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -11,15 +11,16 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
     <!-- com zoom initial-scale=1 | Sem zoom user-scalable=no" -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portal Abix - Ferramentas para Funcionarios" />
-    <meta name="keywords" content="abix,abix portal, portal abix" />
+    <meta name="description" content="Catalogo Abix - Ferramentas para Funcionarios" />
+    <meta name="keywords" content="abix,abix catalogo, catalogo abix" />
     <meta name="copyright" content="© JuniorSilva 2019 | Abix Tecnologia" />
     <meta name="author" content="JuniorZe" />
-    <script type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/assets/js/script.js"></script>
 
     {{#pageTitle}}<title>{{pageTitle}}</title>{{/pageTitle}}
     {{^pageTitle}}<title>{{h.defaultPageTitle}}</title>{{/pageTitle}}
-    
+
   </head>
 
   <body>
@@ -33,27 +34,28 @@
          <form action="/search" method="get">
               <input placeholder="Pesquisar" type="search" name="S" />
         </form>
-
-        {{#user}}
-            Olá,{{user.name}}
-        {{/user}}
-
     </header>
+
+      {{#user}}
+        <div class="userlogged">
+          Olá, <a href="/profile">{{user.name}}!</a>
+        </div>
+      {{/user}}
 
       <div class="tags">
         {{#tags}}
           <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
         {{/tags}}
-      </div>  
+      </div>
 
-       
+
 
         {{#flashes}}
 
           {{#login}}
             <div class="warning-success">{{.}}</div>
           {{/login}}
-        
+
           {{#success}}
             <div class="warning-success">{{.}}</div>
           {{/success}}

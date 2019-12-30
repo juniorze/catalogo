@@ -1,0 +1,16 @@
+{{> header}}
+
+<div>
+   <h2>Excluir Antena {{post.title}} do catálogo</h2>
+
+   <form method="POST">
+      <label>
+         {{#post.photo}}
+            <img src="/media/pq_{{post.photo}}" />
+         {{/post.photo}}
+      </label>
+         <br />
+      <input type="submit" value="Excluir" />
+   </form>
+</div>
+{{> footer}}
