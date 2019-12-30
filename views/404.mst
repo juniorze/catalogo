@@ -6,6 +6,7 @@
    <p> Pagina não encontrada</p>
       <br /><br /><br />
    <button>HOME</button>
+
 </div>
 
 {{> footer}}
