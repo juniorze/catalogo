@@ -24,8 +24,6 @@ exports.index = async (req, res) => {
       }
    }
 
-   console.log(req.user);
-
    pageInfos.tags = tags;
    pageInfos.posts = posts;
 

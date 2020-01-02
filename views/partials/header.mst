@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
-    <!-- com zoom initial-scale=1 | Sem zoom user-scalable=no" -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Catalogo Abix - Ferramentas para Funcionarios" />
-    <meta name="keywords" content="abix,abix catalogo, catalogo abix" />
-    <meta name="copyright" content="© JuniorSilva 2019 | Abix Tecnologia" />
-    <meta name="author" content="JuniorZe" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.css"
+         rel="stylesheet"
+      />
 
-    {{#pageTitle}}<title>{{pageTitle}}</title>{{/pageTitle}}
-    {{^pageTitle}}<title>{{h.defaultPageTitle}}</title>{{/pageTitle}}
 
+      <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+      <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
+      <!-- com zoom initial-scale=1 | Sem zoom user-scalable=no" -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Catalogo Abix - Ferramentas para Funcionarios" />
+      <meta name="keywords" content="abix,abix catalogo, catalogo abix" />
+      <meta name="copyright" content="© JuniorSilva 2019 | Abix Tecnologia" />
+      <meta name="author" content="JuniorZe" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="/assets/js/script.js"></script>
+
+      {{#pageTitle}}<title>{{pageTitle}}</title>{{/pageTitle}}
+      {{^pageTitle}}<title>{{h.defaultPageTitle}}</title>{{/pageTitle}}
   </head>
 
   <body>
@@ -38,7 +43,7 @@
 
       {{#user}}
         <div class="userlogged">
-          Olá, <a href="/profile">{{user.name}}!</a>
+         <p>Olá, <a href="/profile">{{user.name}}!</a></p>
         </div>
       {{/user}}
 

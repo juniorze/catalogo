@@ -4,19 +4,19 @@
 <div>
 <h1>Catálogo de antenas</h1>
 
-   <div class="posts">
+   <div class="container-posts">
       {{#posts}}
-         <div class="post">
-            {{#photo}}
-               <figure>
-                  <a href="/post/{{slug}}"><img src="/media/pq_{{photo}}" alt="{{title}}"></a>
-               </figure>
-            {{/photo}}
+         <a href="/post/{{slug}}">
+            <div class="post">
+               {{#photo}}
+                  <figure>
+                     <img src="/media/pq_{{photo}}" alt="{{title}}">
+                  </figure>
+               {{/photo}}
 
-            <article>
-               <a href="/post/{{slug}}"><h3>{{title}}</h3></a>
+               <article>
+                  <h3>{{title}}</h3>
                   <br />
-               <a href="/post/{{slug}}">
                   <p>
                      <strong>Comprimento:  </strong>{{size}}
                         <br />
@@ -26,14 +26,13 @@
                         <br />
                      <strong>Frequência:  </strong>{{frequency}}
                         <br />
-                     <strong>Tipo:  </strong>{{type}}
+                  <strong>Tipo:  </strong>{{type}}
                   </p>
                   <br>
-                  <small>Autor: {{author.name}}</small>
-
-               </a>
-            </article>
-         </div>
+                  <p class="by">Publicado por: {{author.name}}</p>
+               </article>
+            </div>
+         </a>
       {{/posts}}
    </div>
 </div>

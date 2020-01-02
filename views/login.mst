@@ -1,25 +1,26 @@
 {{> header}}
 
-<div>
-   <form method="POST">
-      <label>
-         E-mail:
-         <input required type="email" name="email" placeholder="E-mail" />
-      </label>
+
+<div class="container-login">
+	<div class="box-login">
+      <form class="login-form" method="POST">
+         <label>
+            <input required class="login-input" type="email" name="email" placeholder="E-mail" size="30"/>
+         </label>
+            <br />
+         <label>
+            <input required class="login-input" type="password" name="password"  placeholder="Senha" size="30"/>
+         </label>
+            <br />
+         <label>
+            <input class="login-button" type="submit" value="Entrar" />
+
+         </label>
+      </form>
          <br />
-      <label>
-         Senha:
-         <input required type="password" name="password" placeholder="Senha" />
-      </label>
          <br />
-         <br />
-      <label>
-         <input type="submit" value="Logar" />
-      </label>
-   </form>
-      <br />
-      <br />
-   <small><a href="/users/forget">Esqueci minha senha</a></small>
+      <div class="forget"><a href="/users/forget">Esqueci minha senha</a></div>
+   </div>
 </div>
 
 {{> footer}}
