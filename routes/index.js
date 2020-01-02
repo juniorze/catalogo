@@ -12,6 +12,8 @@ router.get('/users/login', usersController.login);
 router.post('/users/login', usersController.loginAction);
 router.get('/users/logout', usersController.logout);
 
+router.get('/teste', homeController.teste);
+
 router.get(
    '/users/register',
    authMiddlewares.isLogged,

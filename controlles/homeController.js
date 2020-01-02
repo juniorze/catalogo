@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Post = mongoose.model('Post');
 
+exports.teste = (req, res) => {
+   res.render('teste');
+};
 exports.index = async (req, res) => {
    let pageInfos = {
       pageTitle: 'Home',

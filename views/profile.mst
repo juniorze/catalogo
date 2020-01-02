@@ -1,43 +1,43 @@
 {{> header}}
 
-<div>
-   <h1>Meu Perfil</h1>
+<div class="container-forms">
+	<div class="box-forms">
+      <h1>Meu Perfil</h1>
 
-   <form method="POST">
-      <label>
-         Nome e Sobrenome:
-         <input type="text" name="name" value="{{user.name}}" />
-      </label>
-         <br />
-      <label>
-         E-mail:
-         <input type="email" name="email" value="{{user.email}}" />
-      </label>
-         <br />
-         <br />
-      <label>
-         <input type="submit" value="Atualizar Dados" />
-      </label>
-   </form>
+      <form class="forms" method="POST">
+         <label>
+            Nome e Sobrenome:
+            <input class="inputs" type="text" name="name" value="{{user.name}}" size="30"/>
+         </label>
+            <br />
+         <label>
+            E-mail:
+            <input class="inputs" type="email" name="email" value="{{user.email}}" size="30"/>
+         </label>
+            <br />
+            <br />
+         <label>
+            <input class="inputs-button"type="submit" value="Atualizar Dados" />
+         </label>
+      </form>
 
-      <br />
-      <hr />
-      <br />
+      <hr>
 
-   <form method="POST" action="/profile/password">
-      <label>
-         Nova Senha:
-         <input required type="password" name="password" />
-      </label>
-      <br />
-      <label>
-         Confirmar Nova Senha:
-         <input required type="password" name="password-confirm" />
-      </label>
-      <br /> <br />
-      <label>
-         <input type="submit" value="Trocar a Senha" />
-      </label>
-   </form>
+      <form class="forms" method="POST" action="/profile/password">
+         <label>
+            Nova Senha:
+            <input class="inputs" required type="password" name="password" size="30"/>
+         </label>
+         <br />
+         <label>
+            Confirmar Nova Senha:
+            <input class="inputs" required type="password" name="password-confirm" size="30"/>
+         </label>
+         <br /> <br />
+         <label>
+            <input class="inputs-button" type="submit" value="Trocar a Senha" />
+         </label>
+      </form>
+   </div>
 </div>
 {{> footer}}
