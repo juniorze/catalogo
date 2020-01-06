@@ -35,8 +35,8 @@
 
    {{#user}}
       <ul>
-         <li><a href="/post/{{post.slug}}/edit">Editar</a></li>
-         <li><a href="/post/{{post.slug}}/delete">Deletar</a></li>
+         <li><a class="edit" href="/post/{{post.slug}}/edit">Editar</a></li>
+         <li><a class="delete" href="/post/{{post.slug}}/delete">Deletar</a></li>
       </ul>
    {{/user}}
 

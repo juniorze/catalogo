@@ -1,53 +1,67 @@
 {{> header}}
 
-<div>
-   <h2>Editando Antena: {{post.title}}</h2>
+<div class="container-forms">
+	<div class="box-forms">
+      <h1>Editando Antena: {{post.title}}</h1>
 
-   <form method="POST" enctype="multipart/form-data">
-      <label>
-         Imagem:<br />
-         {{#post.photo}}
-            <img src="/media/pq_{{post.photo}}" />
-         {{/post.photo}}
-         <input type="file" name="photo" />
-      </label>
-         <br />
-      <label>
-         Título:
-         <input type="text" name="title" value="{{post.title}}"/>
-      </label>
-         <br />
-      <label>
-         Comprimento:
-         <input type="text" name="size" value="{{post.size}}"/>
-      </label>
-         <br />
-      <label>
-         Espessura:
-         <input type="text" name="thickness" value="{{post.thickness}}"/>
-      </label>
-         <br />
-      <label>
-         Compatíveis:
-         <input type="text" name="compatible" value="{{post.compatible}}"/>
-      </label>
-         <br />
-      <label>
-         Frequência:
-         <input type="text" name="frequency" value="{{post.frequency}}"/>
-      </label>
-         <br />
-      <label>
-         Tipo:
-         <input type="text" name="type" value="{{post.type}}"/>
-      </label>
-         <br />
-      <label>
-         <input type="text" name="tags" value="{{post.tags}}"/>
-      </label>
-         <br />
-         <br />
-      <input type="submit" value="Enviar" />
-   </form>
+      <form class="forms" method="POST" enctype="multipart/form-data">
+         <label>
+            Imagem:<br />
+            {{#post.photo}}
+               <img src="/media/pq_{{post.photo}}" />
+            {{/post.photo}}
+            <br />
+            <div class="form-group">
+               <div class="input-group">
+                  <input type="text" class="form-control" readonly>
+                  <div class="input-group-btn">
+                     <span class="fileUpload btn btn-success">
+                        <span class="upl" id="upload">Enviar Imagem</span>
+                        <input type="file" name="photo" class="upload up" id="up" onchange="readURL(this);" />
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </label>
+            <br />
+         <label>
+            Título:
+            <input class="inputs" type="text" name="title" value="{{post.title}}"/>
+         </label>
+            <br />
+         <label>
+            Comprimento:
+            <input class="inputs" type="text" name="size" value="{{post.size}}"/>
+         </label>
+            <br />
+         <label>
+            Espessura:
+            <input class="inputs" type="text" name="thickness" value="{{post.thickness}}"/>
+         </label>
+            <br />
+         <label>
+            Compatíveis:
+            <input class="inputs" type="text" name="compatible" value="{{post.compatible}}"/>
+         </label>
+            <br />
+         <label>
+            Frequência:
+            <input class="inputs" type="text" name="frequency" value="{{post.frequency}}"/>
+         </label>
+            <br />
+         <label>
+            Tipo:
+            <input class="inputs" type="text" name="type" value="{{post.type}}"/>
+         </label>
+            <br />
+         <label>
+            Tags: <small>(separar tags por vírgula)</small>
+            <input class="inputs" type="text" name="tags" value="{{post.tags}}"/>
+         </label>
+            <br />
+            <br />
+         <input class="inputs-button" type="submit" value="Enviar" />
+      </form>
+   </div>
 </div>
 {{> footer}}

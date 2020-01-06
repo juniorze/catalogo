@@ -1,15 +1,3 @@
 
-
-   <footer class="site-footer">
-      <div class="container">
-         <h6>About</h6>
-         <p>catalogo.abix <i>Catálago de antenas</i>.</p>
-      </div>
-         <hr>
-      <div class="container">
-         <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by <a href="#">Junior Silva</a>.</p>
-      </div>
-
-   </footer>
 </body>
 </html>

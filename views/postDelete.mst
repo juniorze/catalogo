@@ -1,16 +1,19 @@
 {{> header}}
 
-<div>
-   <h2>Excluir Antena {{post.title}} do catálogo</h2>
+<div class="container-forms">
+	<div class="box-forms">
+      <h1>Excluir Antena {{post.title}} do catálogo</h1>
 
-   <form method="POST">
-      <label>
-         {{#post.photo}}
-            <img src="/media/pq_{{post.photo}}" />
-         {{/post.photo}}
-      </label>
-         <br />
-      <input type="submit" value="Excluir" />
-   </form>
+      <form class="forms" method="POST">
+         <label>
+            {{#post.photo}}
+               <img src="/media/pq_{{post.photo}}" />
+            {{/post.photo}}
+         </label>
+            <br />
+         <input class="delete" type="submit"  value="Excluir" />
+      </form>
+   </div>
 </div>
+
 {{> footer}}

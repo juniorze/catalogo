@@ -1,45 +1,64 @@
 {{> header}}
 
-<div class="postV">
+<div class="container-forms">
+	<div class="box-forms">
+      <h1>Adicionar Antena</h1>
 
-   <h2>{{post.title}}</h2>
+      <form class="forms" method="POST" enctype="multipart/form-data">
 
-      <br />
-      <hr />
 
-   <figure class="imgPostV">
-      <img src="/media/{{post.photo}}" alt="{{post.title}}">
-   </figure>
+         <div class="form-group">
+            <div class="input-group">
+               <input type="text" class="form-control" readonly>
+               <div class="input-group-btn">
+                  <span class="fileUpload btn btn-success">
+                        <span class="upl" id="upload">Upload single file</span>
+                        <input type="file" name="photo" class="upload up" id="up" onchange="readURL(this);" />
+                  </span><!-- btn-orange -->
+               </div><!-- btn -->
+            </div><!-- group -->
+         </div><!-- form-group -->
 
-   <article>
-      {{! size thickness compatible frequency type }}
-      <p>
-         <strong>Comprimento:&ensp;</strong> {{post.size}}
+
+
+           <br />
+         <label>
+            Título:
+            <input class="inputs" type="text" name="title" />
+         </label>
             <br />
-         <strong>Espessura:&ensp;</strong> {{post.thickness}}
+         <label>
+            Comprimento:
+            <input class="inputs" type="text" name="size" />
+         </label>
             <br />
-         <strong>Rádios Compatíveis:&ensp;</strong> {{post.compatible}}
+         <label>
+            Espessura:
+            <input class="inputs" type="text" name="thickness" />
+         </label>
             <br />
-         <strong>Frequência:&ensp;</strong> {{post.frequency}}
+         <label>
+            Compatíveis:
+            <input class="inputs" type="text" name="compatible" />
+         </label>
             <br />
-         <strong>Tipo:&ensp;</strong> {{post.type}}
-      </p>
-         <br />
-         <hr />
-      <p class="tags">Tags:&ensp; {{post.tags}}</p>
-         <br />
-         <br />
-
-      <small>Autor: {{author.name}}</small>
-   </article>
-
-   {{#user}}
-      <ul>
-         <li><a href="/post/{{post.slug}}/edit">Editar</a></li>
-         <li><a href="/post/{{post.slug}}/delete">Deletar</a></li>
-      </ul>
-   {{/user}}
-
+         <label>
+            Frequência:
+            <input class="inputs" type="text" name="frequency" />
+         </label>
+            <br />
+         <label>
+            Tipo:
+            <input class="inputs" type="text" name="type" />
+         </label>
+            <br />
+         <label>
+            Tags: <small>(separar tags por vírgula)</small>
+            <input class="inputs" type="text" name="tags" />
+         </label>
+            <br />
+         <input class="inputs-button" type="submit" value="Enviar" />
+      </form>
+   </div>
 </div>
-
 {{> footer}}
